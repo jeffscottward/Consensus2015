@@ -1,0 +1,34 @@
+.features-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background: #CCC;
+	overflow-y: scroll;
+}
+
+.features-container,
+.features-container [class*="controller-container"] {
+	width: 100%;
+}
+
+.features-container [class*="controller-container"] {
+	height: calc(100% - 60px);
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	overflow-y: scroll;
+}
+
+.features-container [class*="controller-container"] [class*="pages-container"] {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.features-container [class*="controller-container"] [class*="pages-container"] > * {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 10px;
+	overflow-y: scroll;
+}

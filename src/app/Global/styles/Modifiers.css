@@ -1,0 +1,18 @@
+.text-link {
+	cursor: pointer;
+	
+	&-inbound {
+		cursor: pointer;
+		color: blue;
+		text-decoration: underline;
+	}
+}
+
+.Absolute-Center { 
+  height: 50%; /* Set your own height: percents, ems, whatever! */
+  width: 50%; /* Set your own width: percents, ems, whatever! */
+  overflow: auto; /* Recommended in case content is larger than the container */
+  margin: auto; /* Center the item vertically & horizontally */
+  position: absolute; /* Break it out of the regular flow */
+  top: -30%; left: 0; bottom: 0; right: 0; /* Set the bounds in which to center it, relative to its parent/container */
+}

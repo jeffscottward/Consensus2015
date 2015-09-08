@@ -1,0 +1,8 @@
+.page-404 {
+	text-align: center; 
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3em;
+}

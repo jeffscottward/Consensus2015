@@ -1,0 +1,16 @@
+.header-navigation {
+	padding-right: 50px;
+
+	> ul {
+		position: relative;
+	}
+
+	> ul > li {
+		display: none;
+	}
+
+	li {
+		display: inline-block;
+		margin-left: 10px;
+	}
+}

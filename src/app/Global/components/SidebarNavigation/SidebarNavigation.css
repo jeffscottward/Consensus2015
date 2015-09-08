@@ -1,0 +1,54 @@
+.sidebar-navigation {
+	background: #333;
+	flex: 0 0 215px;
+	font-size: 15px;
+}
+
+.sidebar-navigation ul li {
+	background: #333;
+	border-bottom: 1px solid #111;
+}
+
+.sidebar-navigation ul li a {
+	display: block;
+	padding: 15px 0 15px 10px;
+	color: white;
+	text-decoration: none;
+}
+
+.sidebar-navigation ul li a:hover {
+	background: var(--primaryColor);
+	color: white;
+}
+
+.sidebar-navigation ul li a:active {
+	background: #433C6C;
+	color: white;
+}
+
+.sidebar-navigation ul li a i {
+	margin-right: 5px;
+}
+
+.sidebar-navigation .transactions a,
+.sidebar-navigation .bills a,
+.sidebar-navigation .receipts a,
+.sidebar-navigation .reports a,
+.sidebar-navigation .payroll a, 
+.sidebar-navigation .dashboard a {
+	color: gray;
+}
+
+.sidebar-navigation.accounting .accounting a,
+.sidebar-navigation.auditing .auditing a,
+.sidebar-navigation.invoices .invoices a,
+.sidebar-navigation.dashboard .dashboard a,
+.sidebar-navigation.transactions .transactions a,
+.sidebar-navigation.bills .bills a,
+.sidebar-navigation.receipts .receipts a,
+.sidebar-navigation.reports .reports a,
+.sidebar-navigation.payroll .payroll a,
+.sidebar-navigation.invoices .invoices a {
+	background: var(--primaryColor);
+	color: white;
+}

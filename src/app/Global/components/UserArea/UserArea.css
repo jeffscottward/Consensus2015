@@ -1,0 +1,45 @@
+.user-area {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.user-area .user-name, 
+.user-area .user-pic {
+	display: inline-block;
+}
+
+.user-name,
+.user-pic {
+	cursor: pointer;
+}
+
+.user-pic {
+	margin-left: 10px;
+	background: white;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: -10px;
+}
+
+.user-menu {
+	display: none;
+	background: white;
+	padding: 10px;
+	position: absolute;
+	top: 150%;
+	right: 0;
+	width: auto;
+	text-align: right;
+	white-space: nowrap;
+	box-shadow: 0 3px 8px #7B7B7B;
+}
+.user-menu li {
+	display: block;
+	margin-left: 0;
+}
+
+.user-area.open .user-menu {
+	display: block;
+}

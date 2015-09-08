@@ -1,0 +1,5 @@
+.value-item, .value-header,
+.sum-item, .sum-header,
+.token-item, .token-header {
+	text-align: right;
+}

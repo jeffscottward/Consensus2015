@@ -1,0 +1,172 @@
+.modal.create-an-invoice {
+	min-width: 700px;
+	max-width: 800px;
+
+	.modal-body {
+		padding: 0;
+	}
+
+	.createInvoiceForm {
+
+		section {
+			padding: 0 20px;
+		}
+
+		.invoice-base-info {
+			tbody{
+				td {
+					padding-right: 10px;
+				}
+			}
+		}
+
+		.invoice-edit-action-area,
+		.invoice-base-info,
+		.invoice-review-details,
+		.invoice-base-info-editor {
+			padding: 10px 20px;
+			margin: auto;
+			position: relative;
+		}
+
+		.question-number-label {
+			background: #CCC;
+			font-weight: bold;
+			font-size: 24px;
+			width: 24px;
+			height: 24px;
+			line-height: 1;
+			display: inline-block;
+			vertical-align: middle;
+			border-radius: 50%;
+			position: absolute;
+			top: -12px;
+			left: -12px;
+			text-align: center;
+		}
+
+		.invoice-base-info {
+			
+			input[type="date"] {
+				width: 155px;
+			}
+
+			select {
+				max-width: 150px;
+			}
+
+			.invoice-number {
+				width: 80px;
+			}
+		
+
+			.currency-text {
+				font-weight: bold;
+				font-size: 18px;
+				display: block;
+				width: 100%;
+				text-align: center; 
+				&.USD { background-color: green;  color: white; }
+				&.BTC { background-color: #F9A540; color: white; }
+				&.ETH { background-color: #454A75; color: white; }
+			}
+		}
+
+		.invoice-edit-action-area {
+			text-align: right;
+		}
+
+		.invoice-base-info-editor {
+			display: flex;
+			justify-content: space-between; 
+
+			.invoice-base-info-editor-1,
+			.invoice-base-info-editor-2 {
+				width: 49%;
+			}
+
+			.invoice-base-info-editor-2 {
+				display: flex;
+				flex-direction: column;
+				
+				label { flex: 0; }
+				textarea { flex: 1; }
+			}
+
+			.invoice-subheading,
+			.invoice-footer {
+				margin-bottom: 10px;
+			}
+		}
+
+		.invoice-questions {
+			padding: 10px 20px;
+			
+			li {
+				background: #CCC;
+				margin: 20px 0;
+				border-radius: 5px;
+				padding: 10px;
+				position: relative;
+
+				&:first-child {
+					margin-bottom: 30px;
+					display: flex;
+
+					.question-text,
+					select {
+						display: inline-block;
+					}
+					.question-text {
+						margin-right: 20px;
+						margin-bottom: 0;
+					}
+				}
+
+				.question-text {
+					margin-bottom: 10px;
+				}
+
+				table {
+					
+					td {
+						padding-right: 20px;
+
+						&:last-child {
+							padding-right: 0px;
+						}
+					}
+				}
+			}
+		}
+
+		.invoice-review-details {
+			background: #CCC;
+
+			.question-number-label {
+				left: 10px;
+			}
+
+			.invoice-review-details-container {
+				display: flex;
+				
+				.USD { background-color: green;  color: white; }
+				.BTC { background-color: #F9A540; color: white; }
+				.ETH { background-color: #454A75; color: white; }
+
+				table {
+					width: 65%;
+				}
+				
+				.invoice-review-action-buttons {
+					width: 35%;
+					text-align: right;
+					
+					button:nth-child(1) {
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}

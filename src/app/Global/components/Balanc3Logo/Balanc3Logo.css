@@ -1,0 +1,93 @@
+.balanc3-logo {
+  width: 300px;
+  height: 263px;
+  position: absolute;
+  z-index: 999;
+  backface-visibility: hidden;
+  transform: scale(0.15);
+  transform-origin: top left;
+  top: 10px;
+}
+
+.balanc3-logo .pUp {
+  width: 300px;
+  height: 176px;
+}
+.balanc3-logo .pUp .pLeft {
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 176px;
+  transform: rotate(30deg);
+}
+.balanc3-logo .pUp .pLeft .pl1 {
+  position: absolute;
+  top: 17px;
+  left: 69px;
+  height: 220px;
+  width: 50px;
+  background: #aec9e7;
+  transform: rotate(30deg) skewx(30deg);
+}
+.balanc3-logo .pUp .pLeft .pl2 {
+  position: absolute;
+  top: 44px;
+  left: 116px;
+  height: 175px;
+  width: 0;
+  border-left: 31px solid #07377f;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+}
+.balanc3-logo .pUp .pRight {
+  position: relative;
+  float: right;
+  width: 150px;
+  height: 176px;
+  transform: rotate(-30deg);
+}
+.balanc3-logo .pUp .pRight .pr1 {
+  position: absolute;
+  top: -13px;
+  right: 73px;
+  height: 176px;
+  width: 50px;
+  background: #4674AF;
+  transform: rotate(30deg) skewx(30deg);
+}
+.balanc3-logo .pUp .pRight .pr2 {
+  position: absolute;
+  top: 9px;
+  right: 119px;
+  height: 156px;
+  width: 0;
+  border-right: 28px solid #aec9e7;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+}
+
+.balanc3-logo .pBottom {
+  position: relative;
+  float: right;
+  width: 279px;
+  height: 88px;
+}
+.balanc3-logo .pBottom .pb1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 219px;
+  height: 0;
+  border-bottom: 44px solid #4674AF;
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+}
+.balanc3-logo .pBottom .pb2 {
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  width: 254px;
+  height: 44px;
+  background: #07377f;
+  transform: skewx(-30deg);
+}

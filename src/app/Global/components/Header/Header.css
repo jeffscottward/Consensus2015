@@ -1,0 +1,30 @@
+.app-header {
+	display: flex;
+	flex-direction: row;
+	flex: 0 0 60px;
+	color: var(--primaryColor);
+	color: white;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+
+.app-header .app-title {
+	margin-left: 50px;
+	font-weight: 100;
+	font-family: 'Roboto', sans-serif;
+}
+
+.app-search-box {
+	flex: 0 0 350px;
+	background: #333;
+	border: 1px solid #666;
+	margin: auto auto auto 20px; 
+	padding: 5px 5px 5px 10px;
+}
+
+.app-search-box:focus {
+	outline-color: white;
+  outline-style: auto;
+  outline-width: 5px;
+}

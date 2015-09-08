@@ -1,0 +1,13 @@
+.idea
+node_modules/
+npm-debug.log
+selenium-debug.log
+dist/
+bower_components/
+tests/browser/reports
+npm-debug.log
+docs/ui-ideation/
+
+./npm-debug.log
+**/npm-debug.log
+**/**/npm-debug.log

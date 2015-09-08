@@ -1,0 +1,19 @@
+/* Variables */
+@import './global/styles/_variables.css';
+
+/* Global Baseline */
+@import './global/styles/Global.css';
+@import './global/styles/Modifiers.css';
+@import './global/styles/FeatureBlocks.css';
+@import './global/styles/Tabs.css';
+
+.app, 
+.app-container {
+	height: 100%;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 100%;
+}
