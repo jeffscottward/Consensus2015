@@ -70,7 +70,6 @@ export default React.createClass({
 
   render() {
 
-
     // Hand written code (last 6 symbols of hash)
     // 103020
 
@@ -95,53 +94,44 @@ export default React.createClass({
     // Signature of creator
     // 923987926AD23CF8792B8D23
 
-    var form = (
+    var formTable = (
       <table>
         <tbody>
           <tr>
             <td><label>Hand written code (last 6 symbols of hash)</label></td>
             <td><input type="text" placeholder="103020" onChange={this.setFormValues}/></td>
           </tr>
-          
           <tr>
             <td><label>GPS position</label></td>
             <td><input type="text" placeholder="23.145111, 24.151232" onChange={this.setFormValues}/>.145111, 24.151232</td>
           </tr>
-          
           <tr>
             <td><label>Type</label></td>
             <td><input type="text" placeholder="Bottle of water" onChange={this.setFormValues}/> of water</td>
           </tr>
-          
           <tr>
             <td><label>Date</label></td>
             <td><input type="text" placeholder="Sep 14, 2015, 15:35 UTC" onChange={this.setFormValues}/> 14, 2015, 15:35 UTC</td>
           </tr>
-          
           <tr>
             <td><label>Owner</label></td>
             <td><input type="text" placeholder="RedCross" onChange={this.setFormValues}/></td>
           </tr>
-          
           <tr>
             <td><label>Image reference</label></td>
             <td><input type="text" placeholder="12310235AFD12" onChange={this.setFormValues}/></td>
           </tr>
-          
           <tr>
             <td><label>Hash</label></td>
             <td><input type="text" placeholder="FABC120103020" onChange={this.setFormValues}/></td>
           </tr>
-
           <tr>
             <td><label>Signature of creator</label></td>
             <td><input type="text" placeholder="923987926AD23CF8792B8D23" onChange={this.setFormValues}/></td>
           </tr>
-        
         </tbody>
       </table>
-  
-
+    );
 
     var InvoicesBody = (
       <div key="InvoicesBody">
