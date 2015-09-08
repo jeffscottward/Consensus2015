@@ -80,6 +80,7 @@
     "react-tabs": "^0.3.0",
     "reflux": "^0.2.8",
     "require-dot-file": "^0.4.0",
+    "thingchain": "0.0.6",
     "transform-loader": "^0.2.2",
     "web3": "^0.10.0",
     "yamljs": "^0.2.3"
