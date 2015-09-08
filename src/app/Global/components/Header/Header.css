@@ -7,6 +7,10 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 10px;
+	h1 {
+		font-size: 20px;
+		color: white;
+	}
 }
 
 .app-header .app-title {
