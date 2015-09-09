@@ -17,3 +17,39 @@
 	flex-direction: column;
 	flex: 1 0 100%;
 }
+
+table {
+	width: 100%;
+}
+
+input {
+	display: block !important;
+}
+button {
+	margin-bottom: 0;
+	padding: 10px;
+	min-height: 50px;
+}
+
+td {
+	padding-top: 0;
+	text-align: top;
+	margin-bottom: 20px;
+	
+	&:nth-child(1){
+		max-width: 100px;
+	}
+	&:nth-child(2){
+		max-width: 100px;
+	}
+}
+
+img {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+html {
+	max-width: 480px;
+	margin: auto;
+}

@@ -17,34 +17,14 @@ export default React.createClass({
     this.getGeo();
   },
 
-  buildmap() {
-    // https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false
-    // https://developers.google.com/maps/documentation/javascript/examples/map-simple
-    var map;
-    var geoLoc = new window.google.maps.LatLng(this.props.store.data.latitude, this.props.store.data.longitude);  
-    var mapOptions = {
-      zoom: 4,
-      center: geoLoc
-    };
-    
-    map = new window.google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-    var marker = new window.google.maps.Marker({
-      position: geoLoc,
-      map: map,
-      title: 'Aid Chain'
-    });
-  },
-
   getGeo() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((pos) => {
         this.props.store.setStoreData({
-          geoLocation: 'Location: ' + pos.coords.latitude + ', ' + pos.coords.longitude,
+          geoLocation: pos.coords.latitude + ', ' + pos.coords.longitude,
           latitude: pos.coords.latitude,
           longitude: pos.coords.longitude
         });
-        this.buildmap();
       });
     }
   },
@@ -68,58 +48,56 @@ export default React.createClass({
     });
   },
 
+  setFormValues() {
+
+  },
+
+  signit() {
+    window.alert('Signed!')
+  },
+
+  getTime(){
+    var date = new Date(Date.now() * 1000);
+    // hours part from the timestamp
+    var hours = date.getHours();
+    // minutes part from the timestamp
+    var minutes = '0' + date.getMinutes();
+    // seconds part from the timestamp
+    var seconds = '0' + date.getSeconds();
+
+    // will display time in 10:30:23 format
+    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+    return formattedTime;
+  },
+
   render() {
-
-    // Hand written code (last 6 symbols of hash)
-    // 103020
-
-    // GPS position
-    // 23.145111, 24.151232
-
-    // Type
-    // Bottle of water
-
-    // Date
-    // Sep 14, 2015, 15:35 UTC
-
-    // Owner
-    // RedCross
-
-    // Image reference
-    // 12310235AFD12
-
-    // Hash
-    // FABC120103020
-
-    // Signature of creator
-    // 923987926AD23CF8792B8D23
 
     var formTable = (
       <table>
         <tbody>
           <tr>
-            <td><label>Hand written code (last 6 symbols of hash)</label></td>
-            <td><input type="text" placeholder="103020" onChange={this.setFormValues}/></td>
-          </tr>
-          <tr>
             <td><label>GPS position</label></td>
-            <td><input type="text" placeholder="23.145111, 24.151232" onChange={this.setFormValues}/>.145111, 24.151232</td>
+            <td><input type="text" placeholder="23.145111, 24.151232" value={this.props.store.data.geoLocation}/></td>
           </tr>
           <tr>
-            <td><label>Type</label></td>
-            <td><input type="text" placeholder="Bottle of water" onChange={this.setFormValues}/> of water</td>
+            <td><label>Resource Type</label></td>
+            <td>
+              <input type="text" placeholder="Bottle of water" onChange={this.setFormValues} defaultValue='Bottle of Water'/>
+              <input type="number" placeholder="10" defaultValue='10'/> 
+            </td>
           </tr>
           <tr>
             <td><label>Date</label></td>
-            <td><input type="text" placeholder="Sep 14, 2015, 15:35 UTC" onChange={this.setFormValues}/> 14, 2015, 15:35 UTC</td>
+            <td><input type="text" placeholder="Sep 14, 2015, 15:35 UTC" value={this.getTime()}/></td>
           </tr>
           <tr>
-            <td><label>Owner</label></td>
-            <td><input type="text" placeholder="RedCross" onChange={this.setFormValues}/></td>
+            <td><label>NGO Organization</label></td>
+            <td><input type="text" placeholder="NGO ORG" onChange={this.setFormValues} defaultValue='Global Help'/></td>
           </tr>
           <tr>
-            <td><label>Image reference</label></td>
-            <td><input type="text" placeholder="12310235AFD12" onChange={this.setFormValues}/></td>
+            <td><label>Image</label></td>
+            <td><input type="file" placeholder="12310235AFD12" onChange={this.setFormValues}/></td>
           </tr>
           <tr>
             <td><label>Hash</label></td>
@@ -129,33 +107,32 @@ export default React.createClass({
             <td><label>Signature of creator</label></td>
             <td><input type="text" placeholder="923987926AD23CF8792B8D23" onChange={this.setFormValues}/></td>
           </tr>
+          <tr className="right">
+            <td></td>
+            <td><button onClick={this.signit}>Sign</button></td>
+          </tr>
+          <tr>
+            <td><img src="qrcode.png"/></td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     );
 
-    var InvoicesBody = (
-      <div key="InvoicesBody">
+    var DonationBody = (
+      <div key="DonationBody">
         {/*<div>{this.props.store.data.geoLocation}</div>*/}
-        <div id="map-canvas"></div>
+        {formTable}
       </div>
     );
-    var InventoryBody    = (<div key="InventoryBody"><button key="btn-1-invoice-btn" onClick={this.verifyGoods}>Verify Goods</button></div>);
-    var TransmissionBody = (<div key="TransmissionBody"><button key="btn-1-invoice-btn" onClick={this.transmitGoods}>Trasmit Goods</button></div>);
+    var GraphUI          = (<div key="GraphUI"></div>);
+    var TransmissionBody = (<div key="TransmissionBody"></div>);
 
     var panels = [{
-        panelTitle: 'Order Details',
-        panelBody: InvoicesBody,
-        panelActions: null
-      }, {
-        panelTitle: 'Inventory',
-        panelBody: InventoryBody,
-        panelActions: null
-      }, {  
-        panelTitle: 'Transmission Pot',
-        panelBody: TransmissionBody,
-        panelActions: null
-      }
-    ];
+      panelTitle: 'Donation Details',
+      panelBody: DonationBody,
+      panelActions: null
+    }];
 
     var tabListSet = [];
     panels.forEach((element, index) => {
