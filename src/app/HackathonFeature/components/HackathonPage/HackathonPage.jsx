@@ -74,59 +74,58 @@ export default React.createClass({
   render() {
 
     var formTable = (
-      <table>
-        <tbody>
-          <tr>
-            <td><label>GPS position</label></td>
-            <td><input type="text" placeholder="23.145111, 24.151232" value={this.props.store.data.geoLocation}/></td>
-          </tr>
-          <tr>
-            <td><label>Resource Type</label></td>
-            <td>
-              <input type="text" placeholder="Bottle of water" onChange={this.setFormValues} defaultValue='Bottle of Water'/>
-              <input type="number" placeholder="10" defaultValue='10'/> 
-            </td>
-          </tr>
-          <tr>
-            <td><label>Date</label></td>
-            <td><input type="text" placeholder="Sep 14, 2015, 15:35 UTC" value={this.getTime()}/></td>
-          </tr>
-          <tr>
-            <td><label>NGO Organization</label></td>
-            <td><input type="text" placeholder="NGO ORG" onChange={this.setFormValues} defaultValue='Global Help'/></td>
-          </tr>
-          <tr>
-            <td><label>Image</label></td>
-            <td><input type="file" placeholder="12310235AFD12" onChange={this.setFormValues}/></td>
-          </tr>
-          <tr>
-            <td><label>Hash</label></td>
-            <td><input type="text" placeholder="FABC120103020" onChange={this.setFormValues}/></td>
-          </tr>
-          <tr>
-            <td><label>Signature of creator</label></td>
-            <td><input type="text" placeholder="923987926AD23CF8792B8D23" onChange={this.setFormValues}/></td>
-          </tr>
-          <tr className="right">
-            <td></td>
-            <td><button onClick={this.signit}>Sign</button></td>
-          </tr>
-          <tr>
-            <td><img src="qrcode.png"/></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <td><label>GPS position</label></td>
+              <td><input type='text' placeholder='23.145111, 24.151232' value={this.props.store.data.geoLocation}/></td>
+            </tr>
+            <tr>
+              <td><label>Resource Type</label></td>
+              <td>
+                <input type='text' placeholder='US Dollars' onChange={this.setFormValues} defaultValue='US Dollars'/>
+                <input type='number' placeholder='10' defaultValue='800000000000000'/> 
+              </td>
+            </tr>
+            <tr>
+              <td><label>Date</label></td>
+              <td><input type='text' placeholder='Sep 14, 2015, 15:35 UTC' value={this.getTime()}/></td>
+            </tr>
+            <tr>
+              <td><label>NGO Organization</label></td>
+              <td><input type='text' placeholder='NGO ORG' onChange={this.setFormValues} defaultValue='Red Cross'/></td>
+            </tr>
+            <tr>
+              <td><label>Image</label></td>
+              <td><input type='file' placeholder='12310235AFD12' onChange={this.setFormValues}/></td>
+            </tr>
+            <tr>
+              <td><label>Hash</label></td>
+              <td><input type='text' placeholder='FABC120103020' onChange={this.setFormValues}/></td>
+            </tr>
+            <tr>
+              <td><label>Signature of creator</label></td>
+              <td><input type='text' placeholder='923987926AD23CF8792B8D23' onChange={this.setFormValues}/></td>
+            </tr>
+            <tr className='right'>
+
+              <td><button onClick={this.signit}>Sign</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <img src='qrcode.png'/>
+      </div>
     );
 
     var DonationBody = (
-      <div key="DonationBody">
+      <div key='DonationBody'>
         {/*<div>{this.props.store.data.geoLocation}</div>*/}
         {formTable}
       </div>
     );
-    var GraphUI          = (<div key="GraphUI"></div>);
-    var TransmissionBody = (<div key="TransmissionBody"></div>);
+    var GraphUI          = (<div key='GraphUI'></div>);
+    var TransmissionBody = (<div key='TransmissionBody'></div>);
 
     var panels = [{
       panelTitle: 'Donation Details',
@@ -152,7 +151,7 @@ export default React.createClass({
     });
 
     return (
-      <div className="invoices-main">
+      <div className='invoices-main'>
         { 
           this.props.store.data.specificInvoiceView ? 
           <SpecificInvoiceView store={this.props.store}/>

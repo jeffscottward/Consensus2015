@@ -24,6 +24,7 @@ table {
 
 input {
 	display: block !important;
+	width: 100%;
 }
 button {
 	margin-bottom: 0;
@@ -45,11 +46,29 @@ td {
 }
 
 img {
-	max-width: 200px;
-	max-height: 200px;
+	max-width: 100%;
 }
 
 html {
-	max-width: 480px;
+	max-width: 320px;
 	margin: auto;
+}
+
+.right {
+	position: relative;
+	button {
+		width: 280px;
+	}
+
+	td {
+		position: relative;
+	}
+	button {
+		position: absolute;
+	}
+}
+
+img {
+	margin-top: 60px;
+	height: 280px !important;
 }

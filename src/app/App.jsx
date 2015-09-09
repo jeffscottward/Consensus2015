@@ -27,7 +27,6 @@ export default React.createClass({
   render() {
     return (
       <div id='app-container' className='app-container'>
-        <Header/>
         <Locations id='features-container' className='features-container'>
           <Location path='/'                 handler = { HackathonFeature } />
           <Location path='/payroll​(/*)'      handler = { NotFoundPage } />
