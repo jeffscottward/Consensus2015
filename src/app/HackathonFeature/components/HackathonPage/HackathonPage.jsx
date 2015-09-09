@@ -48,12 +48,26 @@ export default React.createClass({
     });
   },
 
-  setFormValues() {
+  generatehash() {
 
+    function randomString(length, chars) {
+      var result = '';
+      for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+      return result;
+    }
+    var newHash = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+
+    this.props.store.setStoreData({
+      hash: newHash
+    });
   },
 
   signit() {
-    window.alert('Signed!')
+
+    this.props.store.setStoreData({
+      signed: true
+    });
+
   },
 
   getTime(){
@@ -84,7 +98,7 @@ export default React.createClass({
             <tr>
               <td><label>Resource Type</label></td>
               <td>
-                <input type='text' placeholder='US Dollars' onChange={this.setFormValues} defaultValue='US Dollars'/>
+                <input type='text' placeholder='US Dollars' onChange={this.generatehash} defaultValue='US Dollars'/>
                 <input type='number' placeholder='10' defaultValue='800000000000000'/> 
               </td>
             </tr>
@@ -94,19 +108,19 @@ export default React.createClass({
             </tr>
             <tr>
               <td><label>NGO Organization</label></td>
-              <td><input type='text' placeholder='NGO ORG' onChange={this.setFormValues} defaultValue='Red Cross'/></td>
+              <td><input type='text' placeholder='NGO ORG' onChange={this.generatehash} defaultValue='Red Cross'/></td>
             </tr>
             <tr>
               <td><label>Image</label></td>
-              <td><input type='file' placeholder='12310235AFD12' onChange={this.setFormValues}/></td>
-            </tr>
-            <tr>
-              <td><label>Hash</label></td>
-              <td><input type='text' placeholder='FABC120103020' onChange={this.setFormValues}/></td>
+              <td><input type='file' placeholder='12310235AFD12' onChange={this.generatehash}/></td>
             </tr>
             <tr>
               <td><label>Signature of creator</label></td>
-              <td><input type='text' placeholder='923987926AD23CF8792B8D23' onChange={this.setFormValues}/></td>
+              <td><input type='text' ref='sig' placeholder='923987926AD23CF8792B8D23' defaultValue='0x02908324908234908'/></td>
+            </tr>
+            <tr>
+              <td><label>Hash</label></td>
+              <td><input type='text' placeholder='FABC120103020' value={this.props.store.data.hash} /></td>
             </tr>
             <tr className='right'>
 
@@ -153,13 +167,16 @@ export default React.createClass({
     return (
       <div className='invoices-main'>
         { 
-          this.props.store.data.specificInvoiceView ? 
-          <SpecificInvoiceView store={this.props.store}/>
-          : 
-          <Tabs onSelect={this.handleSelected} selectedIndex={0}>
-            <TabList key='tab-list-invoice'>{tabListSet}</TabList>
-            {TabPanelSet}
-          </Tabs>
+          !this.props.store.data.signed ? 
+            this.props.store.data.specificInvoiceView ? 
+                <SpecificInvoiceView store={this.props.store}/>
+              : 
+                <Tabs onSelect={this.handleSelected} selectedIndex={0}>
+                  <TabList key='tab-list-invoice'>{tabListSet}</TabList>
+                  {TabPanelSet}
+                </Tabs>
+          :
+            <div>Submission Confirmed!</div>
         }
       </div>
     );
